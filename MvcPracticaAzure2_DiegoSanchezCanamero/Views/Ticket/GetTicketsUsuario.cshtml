@@ -1,0 +1,43 @@
+﻿@model List<Ticket>
+<h1>Ver Tickets Empleado</h1>
+    <h5 style="color:orangered">
+        La idea era tener un authorize, pero como no me da tiempo
+        voy a buscar a los tickets de los usuarios por el numero
+        de usuario simplemente
+    </h5>
+<form method="post">
+    <label>Id Usuario:</label>
+    <input type="text" name="idusuario" class="form-control" />
+    <button type="submit" class="btn-info">
+        Buscar
+    </button>
+</form>
+@if (Model != null)
+{
+    <table class="table-bordered justify-content-center">
+        <thead>
+            <tr>
+                <td>IdTicket</td>
+                <td>IdUsuario</td>
+                <td>Fecha</td>
+                <td>Importe</td>
+                <td>Producto</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.IdTicket</td>
+                <td>@item.IdUsuario</td>
+                <td>@item.Fecha</td>
+                <td>@item.Importe</td>
+                <td>@item.Producto</td>
+                
+
+            </tr>
+            }
+        </tbody>
+
+    </table>
+}

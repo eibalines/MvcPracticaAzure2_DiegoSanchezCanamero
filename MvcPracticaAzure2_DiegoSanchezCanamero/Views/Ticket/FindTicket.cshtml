@@ -1,0 +1,20 @@
+﻿@model Ticket
+<h1>Buscar Tickets</h1>
+<form method="post">
+    <label>Numero Ticket</label>
+    <input type="text" name="idticket" class="form-control"/>
+    <button type="submit" class="btn-info">
+        Buscar
+    </button>
+</form>
+@if(Model != null)
+     {
+<ul>
+    <li>IdTicket: @Model.IdTicket</li>
+    <li>IdUsuario: @Model.IdUsuario</li>
+    <li>Fecha: @Model.Fecha</li>
+    <li>Importe: @Model.Importe</li>
+    <li>Producto: @Model.Producto</li>
+</ul>
+        
+     }
